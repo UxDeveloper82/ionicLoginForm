@@ -1,13 +1,22 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Registration</ion-title>
+    <ion-buttons slot="start">
+         <ion-button color="primary">
+              <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+         </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">Login</ion-button>
+ </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <ion-list>
+  <h1>Create your<br /> Account</h1>
+  <form>
     <ion-item>
-      <ion-label position="stacked">Name</ion-label>
+      <ion-label position="stacked">Your UserName</ion-label>
       <ion-input [(ngModel)]="name" name="name" type="text" required></ion-input>
     </ion-item>
     <ion-item>
@@ -18,6 +27,8 @@
       <ion-label position="stacked">Password</ion-label>
       <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
     </ion-item>
-  </ion-list>
-  <ion-button expand="full" (click)="register()">Register</ion-button>
+    <ion-button expand="block" shape="round" (click)="register()">Register</ion-button>
+  </form>
+
+  <p> By Pressing 'Join Us' you agree to <br /> our terms & conditions.</p>
 </ion-content>

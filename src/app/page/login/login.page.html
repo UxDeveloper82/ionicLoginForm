@@ -1,18 +1,28 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start">
+         <ion-button color="primary">
+              <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+         </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/register">Create account</ion-button>
+ </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion=padding">
-    <form #loginForm="ngForm" (ngSubmit)="login()">
+    <div id="header">
+        <h1>Login</h1>
+        <img src="../../../assets/avatar.jpg">
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="login()" id="form">
         <ion-item fill="solid" class="ion-margin-bottom">
             <ion-input name="username" [(ngModel)]="model.username" type="email" placeholder="Username"></ion-input>
         </ion-item>
         <ion-item fill="solid" class="ion-margin-bottom">
           <ion-input name="password" [(ngModel)]="model.password" type="password" placeholder="Password"></ion-input>
-      </ion-item>
-        <ion-button type="submit" expand="full">Login</ion-button>
-        <ion-button type="button" expand="full">Create account</ion-button>
+        </ion-item>
+        <ion-button type="submit" expand="block" shape="round">Login</ion-button>
     </form>
 </ion-content>
