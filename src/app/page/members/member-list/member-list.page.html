@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>member-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item button *ngFor="let item of members">
+          <ion-avatar slot="start">
+              <img [src]="item.photoUrl" alt="">
+          </ion-avatar>
+          <ion-label>
+                  UserName: {{item.userName}} <br />
+                  Last Active:
+                  <p>{{item.lastActive | date:'mediumTime'}}</p>
+          </ion-label>
+          <ion-badge slot="end">
+            {{item.gender}}
+     </ion-badge>
+      </ion-item>
+  </ion-list>
+</ion-content>
